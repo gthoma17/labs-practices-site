@@ -412,8 +412,9 @@ nav {
 }
 // Language switcher (desktop)
 .lang-switcher-item {
+    top: 5px;
     .lang-switcher-toggle {
-        color: $white;
+
         font-size: 0.875rem;
         padding: 0.25rem 0.5rem;
         display: flex;
@@ -437,7 +438,7 @@ nav {
         margin-top: 0.25rem;
 
         .dropdown-item {
-            color: $white;
+            color: $light;
             font-size: 0.875rem;
             padding: 0.4rem 1rem;
             opacity: 1;
@@ -466,7 +467,7 @@ nav {
     margin-top: 1rem;
 
     i {
-        color: white;
+        color: $light;
         margin-right: 0.5rem;
     }
 
