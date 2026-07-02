@@ -34,6 +34,11 @@
 					</div>
 
 				</li>
+				{{ if gt (len .Translations) 0 }}
+				<li class="nav-item dropdown mb-0 lang-switcher-item">
+					{{ partial "navbar-lang-selector.html" . }}
+				</li>
+				{{ end }}
 				<li id="theme-slider" class="d-flex nav-item ml-lg-2 ml-1 mb-0 position-relative text-nowrap">
 					<div id="theme-icon-circle">
 						<span id="dark-theme-icon"><i class="fas fa-moon"></i></span>
@@ -68,6 +73,18 @@
 				</svg>
 				<a tabindex=-1 href="/search/">Search</a>
 			</li>
+			{{ if gt (len .Translations) 0 }}
+			<li class="mobile-lang-switcher">
+				<i class="fas fa-globe"></i>
+				<span class="mobile-nav-title">Language</span>
+				<ul class="list-unstyled mobile-lang-list">
+					<li><a class="active" href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
+					{{ range .Translations }}
+					<li><a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a></li>
+					{{ end }}
+				</ul>
+			</li>
+			{{ end }}
 		</ul>
 	</div>
 </nav>
